@@ -73,3 +73,48 @@ pip install sentence-transformers
 pip install faiss-cpu  # or faiss-gpu for GPU support
 pip install transformers
 ```
+**3.Image Captioning with BLIP Model**
+
+This repository demonstrates image caption generation using the BLIP (Bootstrapped Language-Image Pretraining) model. The project consists of two key parts:
+
+Training on the CIFAR-10 Dataset
+
+Generating Captions for a Custom Dataset
+
+**Requirements**
+```bash
+pip install transformers pillow
+pip install torch torchvision
+```
+
+**1. Using CIFAR-10 Dataset**
+
+The CIFAR-10 dataset was loaded, preprocessed, and fed into the BLIP model for caption generation. The steps included:
+
+Resizing images to 128x128 for model compatibility.
+
+Using the Salesforce/blip-image-captioning-base pre-trained model for captioning.
+
+Displaying the generated captions along with the images.
+```bash
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+from transformers import BlipProcessor, BlipForConditionalGeneration
+import matplotlib.pyplot as plt
+```
+
+**2. Using a Custom Dataset**
+
+The model was extended to generate captions for images in a custom dataset. This involved:
+
+Loading images from a specified folder.
+
+Processing each image using the BLIP processor.
+
+Generating and displaying captions for the images.
+```bash
+from transformers import BlipProcessor, BlipForConditionalGeneration
+from PIL import Image
+import matplotlib.pyplot as plt
+import os
+```
