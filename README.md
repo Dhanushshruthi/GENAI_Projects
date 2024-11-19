@@ -118,3 +118,32 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import os
 ```
+**4.Question Answering Chatbot using Dense Retrieval and BERT**
+
+This project implements a Question Answering (QA) chatbot using a combination of Dense Retrieval with Sentence Transformers and BERT for context-based answer generation. The system is designed to take a PDF file as input, extract its content, and allow users to interactively ask questions based on the information within the document.
+
+**Features**
+
+**PDF Content Parsing:** Automatically extracts text from a PDF document using the pdfplumber library.
+
+**Dense Retrieval:** Uses Sentence Transformers (all-mpnet-base-v2) to find the most relevant passages for a given question.
+
+**BERT-based Question Answering:** Employs bert-large-uncased-whole-word-masking-finetuned-squad to generate precise answers from the retrieved passages.
+
+**Interactive Chatbot:** Enables users to ask questions dynamically in a conversational format.
+
+**Acknowledgments**
+
+Transformers Library by Hugging Face.
+
+Sentence Transformers for dense embedding-based retrieval.
+
+pdfplumber for PDF text extraction
+```bash
+!pip install pdfplumber
+from transformers import pipeline, AutoTokenizer, AutoModelForQuestionAnswering
+from sentence_transformers import SentenceTransformer, util
+import torch
+import pdfplumber
+```
+
