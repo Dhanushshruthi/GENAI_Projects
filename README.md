@@ -193,4 +193,29 @@ If executed in environments like Google Colab, the file can be downloaded for lo
 pip install TTS PyMuPDF soundfile playsound
 ```
 
+**6.Multi-Lingual Sentiment Analysis**
+
+**OverView**
+
+**Pre-trained Model:** The model used (nlptown/bert-base-multilingual-uncased-sentiment) is a pre-trained BERT-based model fine-tuned for sentiment analysis across multiple languages.
+
+**Sentiment Classification:** The sentiment analysis pipeline uses the model to predict a "star rating" (1-5 stars), which is then mapped to one of three categories: "Happy", "Sad", or "Neutral".
+
+**Score Classification:** Based on the confidence score returned by the model, the text is classified into one of the sentiment categories:
+
+If the score is greater than 0.75, the sentiment is classified as "Happy".
+
+If the score is between 0.55 and 0.75, the sentiment is classified as "Sad".
+
+If the score is less than 0.55, the sentiment is classified as "Neutral".
+
+**Requirements**
+
+**transformers:** Provides access to pre-trained models for various NLP tasks, including sentiment analysis.
+
+**torch:** Required for running deep learning models, including those provided by the transformers library.
+```bash
+pip install transformers torch
+```
+
 
