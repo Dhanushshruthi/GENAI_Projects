@@ -146,4 +146,51 @@ from sentence_transformers import SentenceTransformer, util
 import torch
 import pdfplumber
 ```
+**5.Text-to-Speech Generation**
+
+**Overview**
+
+This project focuses on generating natural-sounding speech from text using pre-trained models and the **Coqui TTS library**. The system has been implemented to support two functionalities:
+
+Text-to-speech generation for a single line or paragraph of text.
+
+Text-to-speech generation for the entire content of a PDF file.
+
+The generated speech is saved as a .wav file, which can be downloaded or played directly.
+
+**Implementation Details**
+
+**Pre-Trained Model:**
+
+The project uses the Coqui TTS library with a pre-trained model (tts_models/en/ljspeech/tacotron2-DDC) to generate high-quality speech.
+
+**Single Text-to-Speech:**
+
+The input text is passed to the synthesizer to produce a .wav audio file.
+
+**PDF-to-Speech:**
+
+Text is extracted from the PDF file using the PyMuPDF library.
+
+The extracted content is passed to the synthesizer, generating a .wav file that narrates the entire document.
+
+**File Handling:**
+
+The generated audio file is saved locally as output.wav.
+
+If executed in environments like Google Colab, the file can be downloaded for local playback.
+
+**Required libraries**
+
+**Coqui TTS:** For text-to-speech synthesis
+
+**PyMuPDF:** For extracting text from PDFs
+
+**SoundFile:** For handling audio files
+
+**playsound:** For playing audio files (optional)
+```bash
+pip install TTS PyMuPDF soundfile playsound
+```
+
 
