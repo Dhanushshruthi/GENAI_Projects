@@ -219,3 +219,41 @@ pip install transformers torch
 ```
 
 
+**7.Few Shot Learning**
+
+**Overview**
+
+This project implements Few-Shot Learning using a Siamese Network. The model is trained to determine whether  input images belong to the same class or different classes based on their similarity. It utilizes a contrastive loss function to minimize the distance between similar images and maximize the distance between dissimilar images.
+
+**How It Works**
+
+**Siamese Network:** The network consists of two identical CNN branches that process the input images. The outputs are then compared using a distance metric (Euclidean distance in this case).
+
+**Contrastive Loss:**  The model is trained using a contrastive loss function that encourages the network to minimize the distance between pairs of images that belong to the same class and maximize the distance for pairs of images that belong to different classes.
+
+**Dataset:** The dataset consists of image pairs that are either from the same class or different classes. The model learns to classify pairs of images by comparing their feature vectors.
+
+**Libraries:**
+
+**1.PyTorch:** For deep learning model creation and training.
+```bash
+pip install torch
+```
+**2.torchvision:** For pre-trained models and image transformations.
+```bash
+pip install torchvision
+```
+**3.PIL (Pillow):** For image processing and manipulation.
+```bash
+pip install pillow
+```
+**4.NumPy:** For handling numerical operations.
+```bash
+pip install numpy
+```
+
+
+
+
+
+
