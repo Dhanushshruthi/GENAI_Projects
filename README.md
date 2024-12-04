@@ -252,6 +252,53 @@ pip install pillow
 pip install numpy
 ```
 
+**8.Neural Network Quantization**
+
+**Overview**
+
+This repository demonstrates a simple approach for training a neural network on the MNIST dataset using PyTorch, followed by applying dynamic quantization to reduce the model size and improve inference performance. The code includes training a neural network to classify MNIST digits, performing model quantization, and using the quantized model to make predictions on test images.
+
+**Key Steps:**
+
+**Training a Neural Network on MNIST:** A simple feed-forward neural network (SimpleNN) is trained on the MNIST dataset for digit classification.
+
+**Dynamic Quantization:** After training, dynamic quantization is applied to the model to reduce the precision of the model weights, resulting in a smaller and faster model for inference.
+
+**Prediction and Visualization:** The quantized model is then used to predict labels for test images, which are displayed along with their true labels.
+
+**Requirements**
+
+**PyTorch:** For deep learning model training, quantization, and inference.
+
+**TorchVision:** For loading the MNIST dataset.
+
+**Matplotlib:** For displaying the test images and results.
+```bash
+pip install torch torchvision matplotlib
+```
+**How It Works**
+
+**MNIST Dataset:** The MNIST dataset consists of 28x28 grayscale images of digits (0-9), split into training and test sets. Images are normalized to a range of [0, 1].
+
+**Model Definition:** A simple feed-forward neural network is used with:
+
+  **Input Layer:** Flattened 28x28 image 
+
+  **Hidden Layer:** 512 units with ReLU activation
+
+  **Output Layer:** 10 units (for digits 0-9)
+
+**Training:** The model is trained for 3 epochs using CrossEntropy loss and Adam optimizer. Accuracy and loss are displayed for each epoch.
+
+**Quantization:** Dynamic quantization is applied to the model, reducing the size by converting linear layers to 8-bit integers.
+```bash
+torch.qint8
+```
+**Prediction:** After quantization, the model predicts labels for test images based on a user-selected index, displaying the true and predicted labels.
+
+**Saving the Quantized Model:** The quantized model is saved to quantized_model.pt for later use.
+
+
 
 
 
