@@ -298,6 +298,32 @@ torch.qint8
 
 **Saving the Quantized Model:** The quantized model is saved to quantized_model.pt for later use.
 
+**9.Text Summarization Using BART**
+
+**Overview**
+
+This project demonstrates how to use the facebook/bart-large-cnn model for text summarization, It leverages the DialogSum dataset, a conversational dataset, to generate summaries for dialogue-based text using the Hugging Face transformers library. The process is performed in a simple pipeline that extracts text from the dataset, applies summarization, and outputs the results.
+
+**How to Use**
+
+**Install Required Libraries:** First, install the necessary libraries using pip. Open your terminal and run
+```bash
+!pip install datasets transformers torch
+```
+**Load the Dataset:** I used the DialogSum dataset, which can be loaded using the datasets library. The dataset contains conversations and corresponding summaries. The following code loads the training set from the dataset.
+
+**Summarization Pipeline:** Use the Hugging Face transformers pipeline to perform text summarization on the dialogue. The pipeline simplifies the process of applying the model to the input text.
+
+**Requirements**
+
+**transformers library:** A library by Hugging Face that provides pre-trained models for natural language processing tasks, including summarization.
+
+**datasets library:** A library by Hugging Face for easy access and manipulation of datasets, such as the DialogSum dataset used in this project.
+
+**torch (PyTorch):** A deep learning framework needed for running transformer models like BART.
+
+**pandas:** A library for handling and processing datasets in tabular form, used when manipulating the dataset.
+
 
 
 
