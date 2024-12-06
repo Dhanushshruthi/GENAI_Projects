@@ -324,6 +324,49 @@ This project demonstrates how to use the facebook/bart-large-cnn model for text 
 
 **pandas:** A library for handling and processing datasets in tabular form, used when manipulating the dataset.
 
+**10.Text-generation using GPT2**
+
+**Overview**
+
+The project leverages the GPT-2 large model to perform text generation based on a provided input sentence. The generated text is extended from the input while adhering to constraints like avoiding repetition. 
+
+Tokenization of input text.
+
+Encoding and decoding of text into numerical formats suitable for GPT-2.
+
+Text generation using beam search for quality results.
+
+**Key Features**
+
+**Pretrained Model:** Uses gpt2-large, a larger variant of GPT-2 for improved performance.
+
+**Beam Search:** Ensures quality generation with the num_beams parameter.
+
+**Repetition Control:** Avoids repeating n-grams with no_repeat_ngram_size.
+
+**Notes**
+
+The script uses the eos_token_id as the padding token for compatibility with GPT-2.
+
+The maximum length of the generated text can be adjusted with the max_length parameter.
+
+Ensure your environment has enough resources to load the gpt2-large model.
+
+**Requirements:**
+
+**Transformers library:** Provides pre-trained models and tools for text generation and NLP tasks.
+
+**Torch library:** Essential for handling tensors and running deep learning models efficiently.
+```bash
+pip install transformers datasets 
+
+```
+
+
+
+
+
+
 
 
 
